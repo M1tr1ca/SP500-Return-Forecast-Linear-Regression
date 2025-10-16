@@ -122,7 +122,7 @@ El proyecto proporciona métricas cuantitativas del rendimiento de cada modelo, 
 
 El siguiente gráfico muestra la comparación del rendimiento acumulado entre la estrategia basada en las predicciones del modelo y una estrategia pasiva de comprar y mantener (Buy & Hold) que sirve como benchmark:
 
-![Rendimiento Acumulado: Estrategia del Modelo vs. Buy & Hold](https://raw.githubusercontent.com/M1tr1ca/SP500-Return-Forecast-Linear-Regression/main/RendimientoAcumuladoEstrategiaModelovsBuyAndHold.png)
+![Rendimiento Acumulado: Estrategia del Modelo vs. Buy & Hold](./RendimientoAcumuladoEstrategiaModelovsBuyAndHold.png)
 
 **Interpretación de Resultados:**
 - La línea azul representa la estrategia **Buy & Hold** (benchmark de mercado)
