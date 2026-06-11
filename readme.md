@@ -2,7 +2,8 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange.svg)](https://scikit-learn.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Course](https://img.shields.io/badge/Course-Artificial_Intelligence-red.svg)](#academic-context)
+[![Institution](https://img.shields.io/badge/Institution-University_of_Alcalá-yellow.svg)](#academic-context)
 
 ## Project Description
 
