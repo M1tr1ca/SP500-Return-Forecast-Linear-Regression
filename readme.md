@@ -4,133 +4,137 @@
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange.svg)](https://scikit-learn.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## Descripción del Proyecto
+## Project Description
 
-Implementación de modelos de Machine Learning para la predicción de rentabilidades del índice S&P 500 utilizando técnicas de regresión lineal y análisis de series temporales. Este proyecto demuestra la aplicación de metodologías estadísticas avanzadas y aprendizaje automático en el análisis cuantitativo de mercados financieros.
+Implementation of Machine Learning models for predicting S&P 500 index returns using linear regression techniques and time series analysis. This project demonstrates the application of advanced statistical methodologies and machine learning in the quantitative analysis of financial markets.
 
-## Objetivos
+## Objectives
 
-- **Ingeniería de Datos**: Procesamiento y transformación de datos históricos del S&P 500 para análisis cuantitativo.
-- **Feature Engineering**: Desarrollo de variables predictivas derivadas (rentabilidades, medias móviles, indicadores técnicos).
-- **Modelado Predictivo**: Implementación de modelos de regresión lineal con diferentes estrategias de entrenamiento.
-- **Evaluación Rigurosa**: Aplicación de métricas estándar de la industria (RMSE, MAE, R²) para validación de modelos.
-- **Visualización de Datos**: Generación de gráficos analíticos para interpretación de resultados.
+- **Data Engineering**: Processing and transformation of historical S&P 500 data for quantitative analysis.
+- **Feature Engineering**: Development of derived predictive variables (returns, moving averages, technical indicators).
+- **Predictive Modeling**: Implementation of linear regression models with different training strategies.
+- **Rigorous Evaluation**: Application of industry-standard metrics (RMSE, MAE, R²) for model validation.
+- **Data Visualization**: Generation of analytical plots for results interpretation.
 
-## Arquitectura de Modelos
+## Model Architecture
 
-### Modelo B: Regresión Lineal Clásica
-Implementación estándar con división temporal train/test. Ajusta un único modelo sobre el conjunto completo de entrenamiento, optimizando parámetros mediante mínimos cuadrados ordinarios (OLS).
+### Model B: Classic Linear Regression
+Standard implementation with temporal train/test split. Fits a single model over the complete training set, optimizing parameters using ordinary least squares (OLS).
 
-**Características:**
-- División temporal estratificada 80/20
-- Validación out-of-sample
-- Métricas de rendimiento comparativas
+**Characteristics:**
+- Stratified temporal 80/20 split
+- Out-of-sample validation
+- Comparative performance metrics
 
-### Modelo C: Rolling Window Regression
-Estrategia avanzada de ventana deslizante temporal que captura la dinámica no estacionaria de los mercados financieros.
+### Model C: Rolling Window Regression
+Advanced temporal sliding window strategy that captures the non-stationary dynamics of financial markets.
 
-**Características:**
-- Ventana móvil de tamaño $N$ configurable
-- Re-entrenamiento iterativo adaptativo
-- Captura de patrones recientes y cambios de régimen
-- Mayor robustez ante volatilidad del mercado
+**Characteristics:**
+- Configurable rolling window of size $N$
+- Adaptive iterative retraining
+- Capture of recent patterns and regime changes
+- Greater robustness against market volatility
 
-**Formulación matemática:**
+**Mathematical formulation:**
 
 $$r_t = \frac{\text{Close}_t - \text{Close}_{t-1}}{\text{Close}_{t-1}}$$
 
-donde $r_t$ representa la rentabilidad logarítmica diaria.
+where $r_t$ represents the daily daily return.
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 PL1/
-├── Cuaderno.ipynb          # Notebook principal con análisis completo
-├── datos.csv               # Dataset histórico S&P 500
+├── Cuaderno.ipynb          # Main notebook with complete analysis (in Spanish)
+├── PL1.ipynb               # Notebook in Spanish
+├── PL1_spanish.ipynb       # Notebook in Spanish (copy)
+├── PL1_english.ipynb       # Notebook in English (translated)
+├── datos.csv               # Historical S&P 500 dataset
 ├── PDF/
 │   └── Practica 1_IA_ENTREGABLE_2025_2026.pdf
-└── readme.md               # Documentación del proyecto
+├── readme_spanish.md       # Project documentation in Spanish
+└── readme.md               # Project documentation in English
 ```
 
-## Stack Tecnológico
+## Technology Stack
 
-- **Python 3.8+**: Lenguaje de programación principal
-- **pandas**: Manipulación y análisis de datos
-- **NumPy**: Computación numérica y operaciones matriciales
-- **scikit-learn**: Implementación de modelos ML y métricas
-- **Matplotlib/Plotly**: Visualización avanzada de datos
-- **Jupyter Notebook**: Entorno de desarrollo interactivo
+- **Python 3.8+**: Main programming language
+- **pandas**: Data manipulation and analysis
+- **NumPy**: Numerical computing and matrix operations
+- **scikit-learn**: ML model implementation and metrics
+- **Matplotlib/Plotly**: Advanced data visualization
+- **Jupyter Notebook**: Interactive development environment
 
-## Instalación y Ejecución
+## Installation and Execution
 
-### Requisitos Previos
+### Prerequisites
 ```bash
 pip install pandas numpy scikit-learn matplotlib plotly jupyter
 ```
 
-### Ejecución del Proyecto
-1. Clonar el repositorio:
+### Running the Project
+1. Clone the repository:
 ```bash
 git clone https://github.com/M1tr1ca/SP500-Return-Forecast-Linear-Regression.git
 cd SP500-Return-Forecast-Linear-Regression
 ```
 
-2. Abrir el notebook en Jupyter:
+2. Open the notebook in Jupyter:
 ```bash
-jupyter notebook Cuaderno.ipynb
+jupyter notebook PL1_english.ipynb
 ```
 
-3. Ejecutar las celdas secuencialmente para reproducir el análisis completo.
+3. Run the cells sequentially to reproduce the complete analysis.
 
-## Metodología
+## Methodology
 
-1. **Preprocesamiento de Datos**
-   - Limpieza y validación de datos faltantes
-   - Conversión de tipos de datos temporales
-   - Ordenamiento cronológico estricto
+1. **Data Preprocessing**
+   - Handling and validation of missing data
+   - Temporal data type conversion
+   - Strict chronological sorting
 
 2. **Feature Engineering**
-   - Cálculo de rentabilidades logarítmicas
-   - Generación de rezagos (lags) temporales
-   - Medias móviles simples (SMA) y exponenciales (EMA)
-   - Indicadores de volatilidad
+   - Calculation of daily returns
+   - Generation of temporal lags
+   - Simple Moving Averages (SMA) and Exponential Moving Averages (EMA)
+   - Volatility indicators
 
-3. **Entrenamiento de Modelos**
-   - División temporal train/test preservando orden cronológico
-   - Ajuste de hiperparámetros
-   - Validación cruzada temporal (opcional)
+3. **Model Training**
+   - Temporal train/test split preserving chronological order
+   - Hyperparameter tuning
+   - Temporal cross-validation (optional)
 
-4. **Evaluación y Métricas**
+4. **Evaluation and Metrics**
    - Root Mean Squared Error (RMSE)
    - Mean Absolute Error (MAE)
    - Coefficient of Determination (R²)
-   - Análisis de residuales
+   - Residual analysis
 
-5. **Visualización de Resultados**
-   - Series temporales: valores reales vs. predicciones
-   - Scatter plots: correlación predicción-realidad
-   - Distribución de errores
+5. **Data Visualization**
+   - Time series: actual values vs. predictions
+   - Scatter plots: prediction-actual correlation
+   - Error distribution
 
-## Resultados
+## Results
 
-El proyecto proporciona métricas cuantitativas del rendimiento de cada modelo, permitiendo comparaciones objetivas. Los resultados incluyen:
-- Capacidad predictiva sobre datos no vistos
-- Análisis de estabilidad temporal
-- Comparativa entre estrategias de modelado
+The project provides quantitative metrics of each model's performance, allowing objective comparisons. The results include:
+- Predictive capacity on unseen data
+- Temporal stability analysis
+- Comparison between modeling strategies
 
-### Rendimiento Acumulado: Estrategia del Modelo vs. Buy & Hold
+### Cumulative Performance: Model Strategy vs. Buy & Hold
 
-El siguiente gráfico muestra la comparación del rendimiento acumulado entre la estrategia basada en las predicciones del modelo y una estrategia pasiva de comprar y mantener (Buy & Hold) que sirve como benchmark:
+The following chart shows the comparison of the cumulative performance between the strategy based on the model's predictions and a passive buy-and-hold (Buy & Hold) strategy that serves as a benchmark:
 
-![Rendimiento Acumulado: Estrategia del Modelo vs. Buy & Hold](./RendimientoAcumuladoEstrategiaModelovsBuyAndHold.png)
+![Cumulative Performance: Model Strategy vs. Buy & Hold](./RendimientoAcumuladoEstrategiaModelovsBuyAndHold.png)
 
-**Interpretación de Resultados:**
-- La línea azul representa la estrategia **Buy & Hold** (benchmark de mercado)
-- La línea roja representa la **Estrategia del Modelo** basada en predicciones
-- El gráfico ilustra el crecimiento de la inversión a lo largo del tiempo (Base = 1)
-- Permite evaluar visualmente si el modelo añade valor frente a una estrategia pasiva
+**Results Interpretation:**
+- The blue line represents the **Buy & Hold** strategy (market benchmark)
+- The red line represents the **Model Strategy** based on predictions
+- The chart illustrates the growth of the investment over time (Base = 1)
+- Allows visual assessment of whether the model adds value compared to a passive strategy
 
-## Contribuidores
+## Contributors
 
 <table>
   <tr>
@@ -161,12 +165,12 @@ El siguiente gráfico muestra la comparación del rendimiento acumulado entre la
   </tr>
 </table>
 
-## Licencia y Disclaimer
+## License and Disclaimer
 
-Este proyecto tiene fines exclusivamente educativos y de investigación académica. No constituye asesoramiento financiero ni recomendaciones de inversión.
+This project is for educational and academic research purposes only. It does not constitute financial advice or investment recommendations.
 
-**Universidad de Alcalá - Inteligencia Artificial**
+**University of Alcalá - Artificial Intelligence**
 
 ---
 
-*Desarrollado como parte del programa de Ingeniería Informática en la Universidad de Alcalá de Henares, 2025-2026.*
+*Developed as part of the Computer Engineering program at the University of Alcalá de Henares, 2025-2026.*
